@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="/static/css/theme.css">
+</head>
+
+<body>
+<div id='topBanner'><span id='title'>Craftspersons journal<span>
+             <div id='tabDiv'>
+                 <a href='/' class='tab'>Home</a>
+                 <a href='/About' class='tab'>About</a>
+                 <a href='/Pricing' class='tab'>Pricing</a>
+                 <a href='/Contact' class='tab'>Contact</a>
+             </div>
+</div>
+
+<div id='main-container'></div>
+<div id='BlogContent'>
+    {{ urls }}
+    {% block blogContent %}
+
+  {% endblock %}
+</div>
+ <div id='rightSidePanel'>
+     {% for url in urls %}
+     <p>{{ url }}</p><br>
+     {% endfor %}
+ </div>
+</div>
+</body>
+</html>
