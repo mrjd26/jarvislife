@@ -6,8 +6,18 @@
 <link rel="stylesheet" type="text/css" href="/static/css/theme.css">
 </head>
 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84755207-2', 'auto');
+    ga('send', 'pageview');
+
+</script>
 <body>
-<div id='topBanner'><span id='title'>Craftspersons journal<span>
+<div id='topBanner'><span id='title'>Mikes Blog<span>
              <div id='tabDiv'>
                  <a href='/' class='tab'>Home</a>
                  <a href='/About' class='tab'>About</a>
@@ -18,14 +28,15 @@
 
 <div id='main-container'></div>
 <div id='BlogContent'>
-    {{ urls }}
     {% block blogContent %}
-
+    <p> Welcome to my corner of the web. Have a look around </p>
+    <img src='/static/img/planter.png' alt='steel planter'/>
+    <br>
   {% endblock %}
 </div>
  <div id='rightSidePanel'>
      {% for url in urls %}
-     <p>{{ url }}</p><br>
+     <p><a href='/{{ url }}'>{{ url }}</a></p><br>
      {% endfor %}
  </div>
 </div>

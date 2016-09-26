@@ -14,8 +14,8 @@ urlpatterns = patterns('',
     url(r'^about/', views.about),
     url(r'^contact/', views.contact),
     url(r'^pricing/', views.pricing),
-    url(r'^2015/08/10/workBench/', views.home),
-    url(r'^2016/03/01/gate/', views.home)
+    url(r'^2015/08/10/build/a/butcher/block/workbench/', views.home),
+    url(r'^2016/03/01/build/a/steel/framed/gate/', views.home)
     # url(r'^mysite/', include('mysite.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

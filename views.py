@@ -2,30 +2,46 @@ from django.shortcuts import render
 
 from django.core.urlresolvers import get_resolver
 
-def home(request):
-    allurls = []
-    urls = []
-    urlpatterns = get_resolver(None).reverse_dict
-    urlpatterns_dictionary = dict(urlpatterns.iterlists())
-    values = urlpatterns_dictionary.values()
-    for value in values:
-        if value[0][1] not in allurls:
-            allurls.append(value[0][1])
+import datetime
 
-    for url in allurls:
-        if url[0].isdigit():
-            urls.append(url)
-
-    path = request.path
+def serve_home_or_article(path):
 
     if path == '/':
-        html_file = 'home.html'
+        return 'home.html'
     else:
         html_file = path.replace('/', '-')
 
-        html_file = html_file[1:-1] + '.html'
+        return html_file[1:-1] + '.html'
 
-    return render(request, html_file, {'urls': allurls})
+def make_datetime_and_article_context(urls):
+    django_context = {}
+
+    for url in urls:
+        date_object = datetime.date(int(url[:4]), int(url[5:7]), int(url[8:10]))
+        article_title = url[11:].replace('/', ' ')
+        django_context[date_object] = article_title
+
+    return django_context
+
+def home(request):
+    urls = []
+    clean_urls = []
+    urlpatterns = get_resolver(None).reverse_dict
+    urlpatterns_dictionary = dict(urlpatterns.iterlists())
+
+    for key, value in urlpatterns_dictionary.iteritems():
+        if key.__name__ == 'home':
+            urls = value
+
+    for url in urls:
+        if url[1][0].isdigit():
+            clean_urls.append(url[1])
+
+    html_file = serve_home_or_article(request.path)
+
+    django_context = make_datetime_and_article_context(clean_urls)
+
+    return render(request, html_file, {'urls': django_context})
 
 def about(request):
     return render(request, 'about.html')
