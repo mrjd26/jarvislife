@@ -30,13 +30,15 @@
 <div id='BlogContent'>
     {% block blogContent %}
     <p> Welcome to my corner of the web. Have a look around </p>
-    <img src='/static/img/planter.png' alt='steel planter'/>
+    <img src='/static/img/site-wide/planter.png' alt='steel planter'/>
     <br>
   {% endblock %}
 </div>
  <div id='rightSidePanel'>
      {% for entry in date_and_title%}
-     <p><a href='/{{ entry.url }}'> {{ entry.article_title }}</a></p><br>
+     <p id="article-title"><a href='/{{ entry.url }}'> {{ entry.article_title }}</a></p>
+     <br id="above-date">
+     <span id="date"> {{ entry.date }}</span>
      {% endfor %}
  </div>
 </div>

@@ -12,7 +12,9 @@ i {
     border-left-style:ridge;
     border-left-color:blue;
     border-bottom-width:1px;
+    line-height:15px;
 }
+
 
 #BlogContent{
     margin-top:100px;
@@ -49,6 +51,18 @@ i {
     margin:4px;
     display:inline-block;
     text-decoration:none;
+}
+
+#article-title {
+  margin-bottom:0px;
+  margin-left:5px;
+  font-size:17px;
+}
+
+#date {
+    color:#36454f;
+    font-size:12px;
+    margin-left:15px;
 }
 
 .main_container {
