@@ -14,12 +14,13 @@ def serve_home_or_article(path):
         return html_file[1:-1] + '.html'
 
 def make_datetime_and_article_context(urls):
-    django_context = {}
+    django_context = []
 
     for url in urls:
-        date_object = datetime.date(int(url[:4]), int(url[5:7]), int(url[8:10]))
+        date_object = datetime.datetime(int(url[:4]), int(url[5:7]), int(url[8:10]))
+        #string_date = date_object.strftime('%Y-%m-%d')
         article_title = url[11:].replace('/', ' ')
-        django_context[date_object] = article_title
+        django_context.append({'date':date_object, 'article_title':article_title, 'url':url})
 
     return django_context
 
@@ -41,7 +42,7 @@ def home(request):
 
     django_context = make_datetime_and_article_context(clean_urls)
 
-    return render(request, html_file, {'urls': django_context})
+    return render(request, html_file, {'date_and_title': django_context})
 
 def about(request):
     return render(request, 'about.html')
