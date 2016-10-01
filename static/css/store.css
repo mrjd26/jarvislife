@@ -1,0 +1,10 @@
+.figbox {
+  display:inline-block;
+  width:300px;
+  height:300px;
+}
+
+.storepic {
+   height:200px;
+   width:200px;
+}

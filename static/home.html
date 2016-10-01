@@ -17,16 +17,16 @@
 </head>
 
 <body>
-<div id='topBanner'><span id='title'>Mikes Blog<span>
-             <div id='tabDiv'>
-                 <a href='/' class='tab'><i class="fa fa-home fa-lg"></i> Home</a>
-                 <a href='/about/' class='tab'><i class="fa fa-info-circle fa-lg"></i>About</a>
-                 <a href='/pricing/' class='tab'><i class="fa fa-credit-card-alt fa-lg"></i>Pricing</a>
-                 <a href='/contact/' class='tab'><i class="fa fa-mobile fa-lg"></i>Contact</a>
-             </div>
+<div id='top-header-container'>
+  <span id='title'>Mikes Blog</span>
+  <div id='site-navigation-tabs'>
+     <a href='/' class='tab'><i class="fa fa-home fa-lg"></i> Home</a>
+     <a href='/about/' class='tab'><i class="fa fa-info-circle fa-lg"></i>About</a>
+     <a href='/store/' class='tab'><i class="fa fa-credit-card-alt fa-lg"></i>Pricing</a>
+     <a href='/contact/' class='tab'><i class="fa fa-mobile fa-lg"></i>Contact</a>
+   </div>
 </div>
 
-<div id='main-container'></div>
 <div id='BlogContent'>
     {% block blogContent %}
     <p> Welcome to my corner of the web. Have a look around </p>
