@@ -4,6 +4,15 @@ from django.core.urlresolvers import get_resolver
 
 import datetime
 
+def remove_html_tags(taglist):
+    import re
+    string = str(taglist[0])
+    m = re.findall ( '<(.*?)>', string, re.DOTALL)
+    for tag in m:
+       string = string.replace('<' + tag + '>', '')
+    string = string[:250] + '...'
+    return string
+
 def make_datetime_and_article_context(urls, calling_method):
     django_context = []
     first_p = None
@@ -24,6 +33,8 @@ def make_datetime_and_article_context(urls, calling_method):
             first_image = soup.img['src']
 
             first_p = soup.findAll('p', {'class':'first'})
+            
+            cleaned_first_p = remove_html_tags(first_p)
 
         django_context.append(
                                  {
@@ -31,7 +42,7 @@ def make_datetime_and_article_context(urls, calling_method):
                                      'article_title': article_title,
                                      'url': url,
                                      'first_image':first_image,
-                                     'first_p': first_p
+                                     'first_p': cleaned_first_p
 
                                  },
                              )

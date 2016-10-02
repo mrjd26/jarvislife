@@ -41,8 +41,7 @@
      {% endblock %}
      {% for entry in date_and_title%}
      <p id="article-title"><a href='/{{ entry.url }}'> {{ entry.article_title }}</a></p>
-     <br id="above-date">
-     <span id="date"> {{ entry.date }}</span>
+     <span id="date"> {{ entry.date|date:"D d M Y" }}</span>
      {% endfor %}
  </div>
 </div>
