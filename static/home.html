@@ -18,7 +18,6 @@
 
 <body>
 <div id='top-header-container'>
-    {{ output }}
   <span id='title'>Mikes Blog</span>
   <div id='site-navigation-tabs'>
      <a href='/' class='tab'><i class="fa fa-home fa-lg"></i> Home</a>
@@ -28,10 +27,13 @@
 </div>
 
 <div id='BlogContent'>
-    {% block blogContent %}
-    <p> Welcome to my corner of the web. Have a look around </p>
-    <img src='/static/img/site-wide/planter.png' alt='steel planter'/>
-    <br>
+  {% block blogContent %}
+
+    {% for entry in date_and_title %}
+    <h1>{{ entry.article_title }}</h1>
+    <img style="width:200px; height:auto" src=" {{ entry.first_image }} " />
+    <p> {{ entry.first_p }} </p>
+    {% endfor %}
   {% endblock %}
 </div>
  <div id='rightSidePanel'>

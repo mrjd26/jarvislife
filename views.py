@@ -6,14 +6,18 @@ import datetime
 
 def make_datetime_and_article_context(urls, calling_method):
     django_context = []
+    first_p = None
+    first_image = None
 
     for url in urls:
         date_object = datetime.datetime(int(url[:4]), int(url[5:7]), int(url[8:10]))
         article_title = url[11:].replace('/', ' ')
 
+        
+        html_file = url.replace('/', '-')
+        html = html_file[:-1] + '.html'
+
         if calling_method == "home":
-            html_file = url.replace('/', '-')
-            html = html_file[:-1] + '.html'
             import BeautifulSoup as bs
             soup = bs.BeautifulSoup(open("/home/mrjd26/mysite/static/" + html))
 
@@ -24,9 +28,10 @@ def make_datetime_and_article_context(urls, calling_method):
         django_context.append(
                                  {
                                      'date': date_object, 
-                                     'article_title': first_p,
+                                     'article_title': article_title,
                                      'url': url,
-                                     'output':first_image
+                                     'first_image':first_image,
+                                     'first_p': first_p
 
                                  },
                              )
@@ -60,15 +65,15 @@ def home(request):
 
 def serve_article(request):
 
-    clean_urls = get_url_list()
-
-    path = request.path
-    html_file = path.replace('/', '-')
-    html_file[1:-1] + '.html'
+    clean_urls = get_url_list() 
 
     django_context = make_datetime_and_article_context(clean_urls, 'serve_article')
 
-    return render(request, html_file, {'date_and_title': django_context})
+    path = request.path
+    html_file = path.replace('/', '-')
+    html = html_file[1:-1] + '.html'
+
+    return render(request, html, {'date_and_title': django_context})
 
 def about(request):
     return render(request, 'about.html')
