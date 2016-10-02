@@ -15,6 +15,9 @@ i {
     line-height:15px;
 }
 
+.contact {
+    margin-left:25px;
+}
 
 #BlogContent{
     margin-top:100px;
@@ -73,15 +76,12 @@ i {
 
 .main_container {
      width:150px;
-     border: 1px solid black;
      overflow: hidden; /* will contain if #first is longer than #second */
 }
-.lefty {
+.lefty-social {
      width:75px;
      float:left; /* add this */
-     border: 1px solid red;
 }
-.righty {
-     border: 1px solid green;
+.righty-social {
      overflow: hidden; /* if you don't want #second to wrap below #first */
  }

@@ -37,6 +37,8 @@
   {% endblock %}
 </div>
  <div id='rightSidePanel'>
+     {% block right-panel %}
+     {% endblock %}
      {% for entry in date_and_title%}
      <p id="article-title"><a href='/{{ entry.url }}'> {{ entry.article_title }}</a></p>
      <br id="above-date">
