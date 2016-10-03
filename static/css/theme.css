@@ -46,6 +46,11 @@ i {
                     transition-delay: initial;
 }
 
+#home-first-p-teaser {
+    width:500px;
+    margin:auto;
+}
+
 #top-header-container {
     width:100%;
     position:absolute;
