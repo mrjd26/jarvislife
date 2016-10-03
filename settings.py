@@ -1,3 +1,6 @@
+
+# Make this unique, and don't share it with anybody.
+SECRET_KEY = '!m5fviw_+h(kmqz$-b^b^*f#amjp=i3p-lmuwbchxz7yxm119h'
 # Django settings for mysite project.
 
 DEBUG = True
@@ -86,9 +89,6 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = '!m5fviw_+h(kmqz$-b^b^*f#amjp=i3p-lmuwbchxz7yxm119h'
-
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
@@ -105,12 +105,18 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'mysite.urls'
-
+TEMPLATES = [
+            {
+                        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+                                'APP_DIRS': True,
+                                'DIRS':['/home/mrjd26/mysite/static/']
+                                },
+            ]
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/home/mrjd26/mysite/static/'
+    '/home/mrjd26/mysite/static/',
     )
 
 INSTALLED_APPS = (
@@ -123,7 +129,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+     'django.contrib.admindocs',
 )
 
 # A sample logging configuration. The only tangible logging

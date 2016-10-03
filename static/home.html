@@ -40,7 +40,7 @@
  <div id='rightSidePanel'>
      {% block right-panel %}
      {% endblock %}
-     {% for entry in date_and_title%}
+     {% for entry in date_and_title|dictsortreversed:"date" %}
      <p id="article-title"><a href='/{{ entry.url }}'> {{ entry.article_title }}</a></p>
      <span id="date"> {{ entry.date|date:"D d M Y" }}</span>
      {% endfor %}

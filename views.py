@@ -22,7 +22,6 @@ def make_datetime_and_article_context(urls, calling_method):
     for url in urls:
         date_object = datetime.datetime(int(url[:4]), int(url[5:7]), int(url[8:10]))
         article_title = url[11:].replace('/', ' ')
-
         
         html_file = url.replace('/', '-')
         html = html_file[:-1] + '.html'
@@ -44,7 +43,6 @@ def make_datetime_and_article_context(urls, calling_method):
                                      'url': url,
                                      'first_image':first_image,
                                      'first_p': cleaned_first_p
-
                                  },
                              )
 
