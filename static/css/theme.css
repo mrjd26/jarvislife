@@ -27,6 +27,24 @@ i {
     overflow-y: scroll;
 }
 
+.homepage-blogContent-posts {
+    text-decoration:none;
+    color:#000000;
+}
+#blogContent-thumbnail {
+    width:200px;
+    height:auto;
+}
+
+#blogContent-thumbnail:hover {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    transition: all 200ms ease-out;
+        transition-property: all;
+            transition-duration: 200ms;
+                transition-timing-function: ease-out;
+                    transition-delay: initial;
+}
+
 #top-header-container {
     width:100%;
     position:absolute;

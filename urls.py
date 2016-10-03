@@ -19,7 +19,8 @@ urlpatterns = patterns('',
     url(r'^2016/03/01/build/a/steel/framed/gate/', views.serve_article),
     url(r'^2016/09/28/Make/a/custom/fumehood/', views.serve_article),
     url(r'^2016/09/30/Mirror/polishing/stainless/steel/', views.serve_article),
-    
+    url(r'^2016/10/02/Donald/Trump/and/building/a/wall/', views.serve_article) 
+
     # url(r'^mysite/', include('mysite.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

@@ -17,6 +17,7 @@ def make_datetime_and_article_context(urls, calling_method):
     django_context = []
     first_p = None
     first_image = None
+    cleaned_first_p = None
 
     for url in urls:
         date_object = datetime.datetime(int(url[:4]), int(url[5:7]), int(url[8:10]))
