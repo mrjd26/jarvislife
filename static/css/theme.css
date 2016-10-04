@@ -133,7 +133,7 @@ html {
 }
 
 body {
-    margin: 0 0 100px; /* bottom = footer height */
+    margin: 0 0 40px; /* bottom = footer height */
     padding: 25px;
 }
 
@@ -141,12 +141,12 @@ body {
     background-color: #327ae5;
     position: absolute;
     left: 0;
-    bottom: 0;
-    height: 100px;
+    bottom: -50px;
+    height: 40px;
     width: 100%;
     overflow:hidden;
 }
 
 #footer-links{
-    margin-top:15px;
+    margin-top:5px;
 }
