@@ -93,3 +93,6 @@ def contact(request):
 
 def store(request):
     return render(request, 'store.html')
+
+def privacy_policy(request):
+    return render(request, 'privacy-policy.html')

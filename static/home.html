@@ -17,16 +17,18 @@
 </head>
 
 <body>
+
 <div id='top-header-container'>
   <span id='title'>Mikes Blog</span>
   <div id='site-navigation-tabs'>
      <a href='/' class='tab'><i class="fa fa-home fa-lg"></i> Home</a>
      <a href='/about/' class='tab'><i class="fa fa-info-circle fa-lg"></i>About</a>
      <a href='/store/' class='tab'><i class="fa fa-credit-card-alt fa-lg"></i>Hire Me</a>
-   </div>
+  </div>
 </div>
 
-<div id='BlogContent'>
+<div id="main-container">
+ <div id="blog-content">
   {% block blogContent %}
     {% for entry in date_and_title %}
     <a class="homepage-blogContent-posts" href=" {{ entry.url }} ">
@@ -36,15 +38,21 @@
     </a>
     {% endfor %}
   {% endblock %}
-</div>
- <div id='rightSidePanel'>
-     {% block right-panel %}
-     {% endblock %}
+ </div>
+ <div id="right-side-panel">
+   {% block right-panel %}
+   {% endblock %}
+   <div id="published-article-list">
      {% for entry in date_and_title|dictsortreversed:"date" %}
      <p id="article-title"><a href='/{{ entry.url }}'> {{ entry.article_title }}</a></p>
      <span id="date"> {{ entry.date|date:"D d M Y" }}</span>
      {% endfor %}
+   </div>
  </div>
+</div>
+</br>
+<div id="footer">
+    <div id="footer-links"><a href="/privacy-policy/">Privacy Policy</a> <span> | © 2016 Mike Jarvis </span></div>
 </div>
 </body>
 </html>

@@ -13,7 +13,7 @@ urlpatterns = [
     url(r'^$', views.home),
     url(r'^about/', views.about),
     url(r'^store/', views.store),
-
+    url(r'^privacy-policy/', views.privacy_policy),
 
     url(r'^2015/08/10/build/a/butcher/block/workbench/', views.serve_article),
     url(r'^2016/03/01/build/a/steel/framed/gate/', views.serve_article),
