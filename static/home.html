@@ -31,23 +31,31 @@
 <div id="main-container">
  <div id="blog-content">
   {% block blogContent %}
-    {% for entry in date_and_title %}
-    <a class="homepage-blogContent-posts" href=" {{ entry.url }} ">
-      <h1>{{ entry.article_title }}</h1>
-      <img id="blogContent-thumbnail" src=" {{ entry.first_image }} " />
-      <p id="home-first-p-teaser"> {{ entry.first_p }} </p>
-    </a>
-    {% endfor %}
+     {% for entry in django_context|slice:":3" %}
+     <br>
+     <a class="homepage-blogContent-posts" href=" {{ entry.url }} ">
+       <h1>{{ entry.article_title }}</h1>
+       <img id="blogContent-thumbnail" src=" {{ entry.first_image }} " />
+       <p id="home-first-p-teaser"> {{ entry.first_p }} </p>
+     </a>
+     {% endfor %}
   {% endblock %}
  </div>
  <div id="right-side-panel">
    {% block right-panel %}
    {% endblock %}
    <div id="published-article-list">
-     {% for entry in date_and_title|dictsortreversed:"date" %}
-     <p id="article-title"><a href='/{{ entry.url }}'> {{ entry.article_title }}</a></p>
-     <span id="date"> {{ entry.date|date:"D d M Y" }}</span>
+    {% if django_context.0.calling_method == "home" %}
+     {% for entry in django_context|dictsortreversed:"date"|slice:"3:" %}
+      <p id="article-title"><a href='/{{ entry.url }}'> {{ entry.article_title }}</a></p>
+      <span id="date"> {{ entry.date|date:"D d M Y" }}</span>
      {% endfor %}
+    {% elif django_context.0.calling_method == "serve_article" %}
+     {% for entry in django_context|dictsortreversed:"date" %}
+      <p id="article-title"><a href='/{{ entry.url }}'> {{ entry.article_title }}</a></p>
+      <span id="date"> {{ entry.date|date:"D d M Y" }}</span>
+     {% endfor %}
+    {% endif %}
    </div>
  </div>
 </div>

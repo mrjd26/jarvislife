@@ -42,7 +42,8 @@ def make_datetime_and_article_context(urls, calling_method):
                                      'article_title': article_title,
                                      'url': url,
                                      'first_image':first_image,
-                                     'first_p': cleaned_first_p
+                                     'first_p': cleaned_first_p,
+                                     'calling_method':calling_method
                                  },
                              )
 
@@ -71,7 +72,7 @@ def home(request):
 
     django_context = make_datetime_and_article_context(clean_urls, 'home')
  
-    return render(request, "home.html", {'date_and_title': django_context})
+    return render(request, "home.html", {'django_context': django_context})
 
 def serve_article(request):
 
@@ -83,7 +84,7 @@ def serve_article(request):
     html_file = path.replace('/', '-')
     html = html_file[1:-1] + '.html'
 
-    return render(request, html, {'date_and_title': django_context})
+    return render(request, html, {'django_context': django_context})
 
 def about(request):
     return render(request, 'about.html')
