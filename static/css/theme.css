@@ -123,6 +123,9 @@ i {
 #about-contact-container {
     position:absolute;
     top:0px;
+    border-left-style:ridge;
+    border-left-color:blue;
+    border-left-width:1px;
 }
  
 html {
