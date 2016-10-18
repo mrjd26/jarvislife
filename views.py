@@ -33,7 +33,7 @@ def make_datetime_and_article_context(urls, calling_method):
             first_image = soup.img['src']
 
             first_p = soup.findAll('p', {'class':'first'})
-            
+
             cleaned_first_p = remove_html_tags(first_p)
 
         django_context.append(
@@ -43,7 +43,7 @@ def make_datetime_and_article_context(urls, calling_method):
                                      'url': url,
                                      'first_image':first_image,
                                      'first_p': cleaned_first_p,
-                                     'calling_method':calling_method
+                                     'calling_method': calling_method
                                  },
                              )
 
