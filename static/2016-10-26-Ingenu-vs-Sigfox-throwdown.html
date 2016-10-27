@@ -1,0 +1,101 @@
+{% extends "home.html" %}
+
+{% block blogContent %}
+
+<title>Sigfox and Ingenu : JarvisLife </title>
+
+<meta name="IoT Cellular networks" content="Internet of Things Cellular Networks"/>
+
+<h1> Internet of Things Cellular networks </h1>
+
+<img src="/static/img/SigfoxVsIngenu/IoT-World.jpg" alt="generic IoT themed picture"/>
+
+<h2> </h2>
+
+<p class="first">I've been following the nascent Internet of Things for about two years now
+and have seen great offerings in the form of wifi chips, namely by a company called Particle,
+but there are probably others.  </p>
+
+<img src="/static/img/SigfoxVsIngenu/ingenuLogo.png" alt="Ingenu's Logo"/>
+
+<p> I first became aware of a San Diego company, Ingenu at a meeting space here in Austin where they
+were showing how they were rolling out a nationwide IoT network and Austin was one of the first
+cities to get this network deployment.  What was immediately interesting to me was that this
+seemed like the cellular solution that has been much needed in the IoT space. If you haven't checked out
+Ingenu I would highly recommend it, as it seems they have all the ingredients of success from the pitch
+they gave here at the tech meetup</p>
+
+<img src="/static/img/" alt=""/>
+ 
+<h2> </h2>
+
+<p>Having been aware of Sigfox since sometime around 2014, I immediately thought about their network and
+had even met a French-American engineer during tech meetup and he had mentioned Sigfox's network</p>
+
+<p> My story would end here if it hadn't been an interest of mine for a long time now to make some kind of prototype
+project that runs on cellular network IoT</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/V4o0pPsdlBo" frameborder="0" allowfullscreen></iframe>i
+
+<span> My IoT water meter that is talking to a Particle chip on home wifi </span>
+
+<p>After attending the Ingenu meetup, I tried to get one of their development boards which they refer to as an rACM.  I emailed
+back and forth with a member of their business solutions team about being able to pay $150 for this board which they claim
+to be plug n play much like an arduino.  It got weird when I had been approved to buy a board from Ingenu and they proceeded to
+send me an NDA to sign, (which I did) in order to get the development board.  I don't hold it against Ingenu, but I think they
+need to contact the people at Particle and work out a partnership of some kind.  It seemed like Ingenu was kind of struggling
+to get their development board and all the associated documentation user communtiy and forms etc. up and running.  I'm still
+hopeful that someday I will be able to test out their network on some kind of easily accessible and programmable chip like an Arduino
+development board that just seemlessly talks to the cell tower.  It was kind of funny how I kept on emailing Ingenu and someone
+kept on promising to sell me this development board.  They told me that the current development board, the rACM, doesn't work indoors
+yet and also that the price would be $150 and there would be no engineering support should I run into any problem. I ultimately said to myself, "
+well I guess I can program this development board with a linux computer on my driveway despite it being the height of summer here in Austin,
+and that well despite its $150 price tag, it would be worthwhile to try out their network and build something on it just to get going
+with it" but as stated, the board never came and I just got tired of trying to contact them about it.</p>
+
+<p>Enter Sigfox</p>
+<p> I thought well, Ingenu may take some time for it to get up and running for people like me who just want to build stuff on their
+network and not lose my mind in the process.  So I finally got a chance to check out Sigfox.  I jumped on their site, where there
+was a way to contact Sigfox. It looked like, they kind of stole a page out of the Ingenu playbook when they state on their website
+they are planning to roll out a network in 100 cities in the United States after just hearing this from the Ingenu road show.  Either
+way its a good thing, and I filled out a form asking about the availability of the network here in Austin. </p>
+
+<img src="/static/img/SigfoxVsIngenu/Toulouse.jpg" alt="Toulouse, France"/>
+<p> I also filled out some kind of questionnaire about whey I was interested in Sigfox's network.  Well I learned when a Sigfox employee emailed
+me back that the network is not in Austin.  So that kind of put a damper on getting my little IoT water meter totally remote and off
+the wifi network.  Interestingly though I was contacted again by some people involved from the 'IoT Valley' in Toulouse,France.  Supposedly,
+trying to make this area of the world a hub for IoT activity.  These people from something called the 'Le Connected Camp' asked what
+my idea or business idea was about and if I would be interested in submitting it to their accelerator program which is what Le Connected Camp
+is.  This never really panned out into anything material, which was fine with me as I beileve they want people to move and work out of
+Toulouse France, which I don't know could be worked out even if the money was available for my family to do such a thing.</p>
+
+<p>I'll probably do a part 2 (part deux!) on the status of the water meter. Its undergone quite a transformation
+since inception and is begging for a revisit as I see it sitting on the shelf next to me!</p> 
+
+    <!-- start disqus import -->
+<div id="disqus_thread"></div>
+<script>
+    /**
+           *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                     */
+   /* 
+           var disqus_config = function () {
+                   this.page.url = '/2016/09/28/Make/a/custom/fumehood/';  // Replace PAGE_URL with your page's canonical URL variable
+                           this.page.identifier = '176395'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                               };
+     */                              
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+             var d = document, s = d.createElement('script');
+                     
+                     s.src = '//jarvislife.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+                             
+                             s.setAttribute('data-timestamp', +new Date());
+                                     (d.head || d.body).appendChild(s);
+                                         })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<!-- end disqus -->
+
+{% endblock %}
