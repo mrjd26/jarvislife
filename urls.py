@@ -22,7 +22,10 @@ urlpatterns = [
     url(r'^2016/10/02/Donald/Trump/and/building/a/wall/', views.serve_article),
     url(r'^2016/10/05/Dos/and/Donts/of/changing/spark/plugs/', views.serve_article),
     url(r'^2016/10/07/Stinson/Beach/and/Google/Photos/', views.serve_article),
-    url(r'^2016/10/26/Ingenu/vs/Sigfox/throwdown/', views.serve_article)
+    url(r'^2016/10/26/Ingenu/vs/Sigfox/throwdown/', views.serve_article),
+    url(r'^2016/11/07/Gate/Progress/', views.serve_article),
+    url(r'^2016/11/11/Why/I/voted/for/Gary/Johnson/', views.serve_article),
+    url(r'^2016/11/22/Gate/Part/Deux/', views.serve_article)
     # url(r'^mysite/', include('mysite.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
